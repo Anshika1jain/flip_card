@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Card Example</title>
+<style>
+   *{
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+                background-color: rgb(52, 50, 50);
+                color: antiquewhite;
+            }
+          
+            section{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+              
+            }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    h2{
+
+    }
+    .flip-card {
+        background-color: transparent;
+        width: 200px;
+        height: 200px;
+        perspective: 1000px; /* Add perspective for 3D effect */
+        display: inline-block;
+        margin: 20px;
+        cursor: pointer;
+       
+            }
+
+    .flip-card-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+     .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Hide the back of the card */
+    }
+
+    .flip-card-front img, .flip-card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+        
+    }
+
+    .flip-card:hover .flip-card-front img {
+        transform: scale(1.2); /* Scale up on hover */
+    }
+
+    .flip-card-back {
+        transform: rotateY(180deg); /* Initially hidden */
+    }
+
+    .flip-card-back img {
+        transform: scale(0.8); /* Slightly smaller size for the back image */
+    }
+
+    .grid-view {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        
+        grid-gap: 10px;
+        grid-template-rows: auto auto auto;
+    }
+
+    .grid-view img {
+        width: calc(100% - 20px); /* Account for grid gap */
+        height: calc(100% - 20px); /* Account for grid gap */
+    }
+    
+</style>
+</head>
+<body>
+    <h1 >ANSHIKA JAIN</h1><BR>
+        <h2 >CHANDIGAR GROUP OF COLLEGES, LANDRAN </h2><BR>
+            <H3 >ROLL NO. </H3>- 2003325
+            <h3><a href="//github.com/Anshika1jain">
+                GITHUB
+            </a></h3>
+            
+<section class="centre">
+    <div class="flip-card" onclick="expandGrid(this)">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+        <img src="images/image1.png" alt="Front Image 1">
+        </div>
+        <div class="flip-card-back">
+        <img src="images/image1.png" >
+        <img src="images/image2.png" >
+        <img src="images/image3.png" >
+        </div>
+    </div>
+    </div>
+</section>
+
+</body>
+</html>
